@@ -1,5 +1,7 @@
 Wallet Connect 登录
-![img_v3_02q9_5ad5d171-4c1b-462f-9cd4-2c6ca4a47b8g](https://github.com/user-attachments/assets/c35f5931-7a72-4d74-8dde-4c6dc1e71f26)
+<img width="414" alt="image" src="https://github.com/user-attachments/assets/c35f5931-7a72-4d74-8dde-4c6dc1e71f26"/>
+<img width="414" height="614" alt="image" src="https://github.com/user-attachments/assets/b66768a5-debf-478e-aa76-f94007d79551" />
+
 
 
 NFT 交易记录
