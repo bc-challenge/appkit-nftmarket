@@ -9,3 +9,6 @@ NFT 交易记录
 https://sepolia.etherscan.io/token/0xba1afEba332ce2c60d0F02Bd5693FCCFAe9E5B42
 
 <img width="1412" height="670" alt="image" src="https://github.com/user-attachments/assets/d38e4c88-4df1-4072-8256-9d4733812cbd" />
+
+监听 NFT上架事件
+![20250919-190507](https://github.com/user-attachments/assets/6e0ecaec-f643-4422-8e0a-c33f886f8973)
