@@ -2,7 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import { WagmiProvider } from 'wagmi'
+import { WagmiProvider ,useWatchContractEvent } from 'wagmi'
 
 import {QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
@@ -34,16 +34,6 @@ createAppKit({
 
 
 function App() {
- 
-  // const [balance , setBalance] = useState('')
-
-
-  // console.log('address', address)
-  // console.log('isConnected', isConnected)
-  // console.log('caipAddress', caipAddress)
-  // console.log('status', status)
-  // console.log('embeddedWalletInfo', embeddedWalletInfo)
-
 
   return (
     <div style={{background: 'white', minHeight: '100vh', width: '100vw'}}>

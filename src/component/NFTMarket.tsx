@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useWaitForTransactionReceipt, useWriteContract, BaseError, useReadContracts, useReadContract } from 'wagmi'
+import { useWaitForTransactionReceipt, useWriteContract, BaseError, useReadContracts, useReadContract, useWatchContractEvent } from 'wagmi'
 import {nftMarketContractConfig } from '../contract/NFTMarket/contracts'
 import { readContract } from 'viem/actions';
 import {config, wagmiAdapter} from '../config/config'
@@ -16,8 +16,21 @@ export function NFTMarket(){
     const [price, setPrice] = useState('');
     const [nftListId, setNftListId] = useState('');        
     const { data: hash, writeContract , error, isPending, } = useWriteContract()
+    const [listedLogs, setListedLogs] = useState<any[]>([])
 
     const { address } = useAppKitAccount();
+
+
+    useWatchContractEvent({
+        address: nftMarketContractConfig.address as  `0x${string}` ,
+        abi: nftMarketContractConfig.abi,
+        eventName: 'NFTListed',
+        onLogs(logs) {
+            console.log(logs)
+            setListedLogs(prev => [...prev, ...logs])
+        },
+      })
+
 
 
     async function handleListing() {
@@ -100,11 +113,14 @@ export function NFTMarket(){
           })
     }
 
+   
+
     const { isLoading: isConfirming, isSuccess: isConfirmed } = useWaitForTransactionReceipt({hash})
     function copyToClipboard(text: string) {
         navigator.clipboard.writeText(text).catch(() => {});
     }
 
+   
     if (!address) return <div></div>;
 
     
@@ -156,6 +172,11 @@ export function NFTMarket(){
                 {isConfirmed && <div>Transaction confirmed.</div>} 
                 {error && (
                     <div>Error: {(error as BaseError).shortMessage || error.message}</div>
+                )}
+                {listedLogs.length > 0 && (
+                    <div style={{marginTop: '8px'}}>
+                        Last NFTListed: {JSON.stringify(listedLogs[listedLogs.length - 1]?.args, (k, v) => typeof v === 'bigint' ? v.toString() : v)}
+                    </div>
                 )}
 
                
