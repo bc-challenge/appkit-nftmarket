@@ -1,6 +1,7 @@
 import { stat } from 'fs'
 import {useAccount, useEnsName, useDisconnect, useConnect, useBalance} from 'wagmi'
 import { useAppKitAccount } from "@reown/appkit/react";
+import React  from 'react';
 
 
 

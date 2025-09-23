@@ -20,7 +20,7 @@ export const metadata = {
     icons: ['https://avatars.githubusercontent.com/u/17922993'],
 }
 
-export const networks = [mainnet, sepolia] as [AppKitNetwork, ...AppKitNetwork[]]
+export const networks = [sepolia] as [AppKitNetwork, ...AppKitNetwork[]]
 
 export const wagmiAdapter = new WagmiAdapter({projectId, networks})
 
